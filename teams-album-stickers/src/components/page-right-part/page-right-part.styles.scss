@@ -1,0 +1,10 @@
+.page-right {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+  .row {
+    margin: 0 4px 18px;
+    width: 30%;
+  }
+}

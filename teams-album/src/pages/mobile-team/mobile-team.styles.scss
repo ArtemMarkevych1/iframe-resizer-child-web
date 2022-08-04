@@ -1,0 +1,9 @@
+@import "../../shared/styles/styles";
+
+.page-container {
+  @extend %page-container;
+
+  .page-column {
+    @extend %page-column;
+  }
+}
