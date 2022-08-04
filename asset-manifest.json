@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/iframe-resizer-child-web/static/css/main.b38f3b85.css",
-    "main.js": "/iframe-resizer-child-web/static/js/main.c542e6bf.js",
+    "main.css": "/iframe-resizer-child-web/static/css/main.449bfcd7.css",
+    "main.js": "/iframe-resizer-child-web/static/js/main.db21960f.js",
     "static/js/787.5bc3cffa.chunk.js": "/iframe-resizer-child-web/static/js/787.5bc3cffa.chunk.js",
     "index.html": "/iframe-resizer-child-web/index.html",
-    "main.b38f3b85.css.map": "/iframe-resizer-child-web/static/css/main.b38f3b85.css.map",
-    "main.c542e6bf.js.map": "/iframe-resizer-child-web/static/js/main.c542e6bf.js.map",
+    "main.449bfcd7.css.map": "/iframe-resizer-child-web/static/css/main.449bfcd7.css.map",
+    "main.db21960f.js.map": "/iframe-resizer-child-web/static/js/main.db21960f.js.map",
     "787.5bc3cffa.chunk.js.map": "/iframe-resizer-child-web/static/js/787.5bc3cffa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b38f3b85.css",
-    "static/js/main.c542e6bf.js"
+    "static/css/main.449bfcd7.css",
+    "static/js/main.db21960f.js"
   ]
 }
