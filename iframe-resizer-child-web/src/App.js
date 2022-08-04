@@ -18,8 +18,7 @@ function App() {
     }, []);
 
     return (
-        <IframeResizer>
-                <div className="App" >
+        <div className="App" >
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias aperiam debitis deleniti
                         distinctio, dolorem eius impedit in ipsam ipsum magnam nam pariatur praesentium qui quisquam similique
                         soluta suscipit unde veniam vitae voluptatem voluptates voluptatibus? Consequuntur cum esse ipsam laudantium
@@ -138,7 +137,6 @@ function App() {
                         ipsum iste iusto labore laboriosam maiores modi mollitia necessitatibus nesciunt nisi officia omnis
                         temporibus veniam veritatis vero!
                 </div>
-        </IframeResizer>
     );
 }
 
