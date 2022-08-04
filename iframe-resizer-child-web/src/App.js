@@ -145,12 +145,62 @@ import './App.css';
 // export default App;
 
 
-
-
 class App extends React.Component {
 
+    // region react lifecycle methods
+    componentWillMount() {
+        // Detect whether device supports orientationchange event, otherwise fall back to the resize event
+        let supportsOrientationChange = 'onorientationchange' in window
+        let orientationEvent = supportsOrientationChange ? 'orientationchange' : 'resize'
+        if (window.addEventListener) {
+            window.addEventListener('message', this.checkSender)
+            window.addEventListener(orientationEvent, this.setIframeHeight)
+        } else if (window.attachEvent) {
+            window.attachEvent('message', this.checkSender)
+            window.attachEvent(orientationEvent, this.setIframeHeight)
+        }
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('message', this.checkSender)
+        let supportsOrientationChange = 'onorientationchange' in window
+        let orientationEvent = supportsOrientationChange ? 'orientationchange' : 'resize'
+        window.removeEventListener(orientationEvent, this.setIframeHeight)
+    }
+
+    // endregion
+
+    // region custom methods.
+    setIframeHeight = () => {
+        try {
+            let iframe = document.getElementById("#todo-iframe")
+            if (iframe) {
+                let iframeWin = iframe.contentDocument || iframe.contentWindow
+                if (iframeWin && iframeWin.getElementById('root')) {
+                    iframe.style.height = iframeWin.getElementById('root').offsetHeight + 'px'
+                }
+            }
+        } catch (e) {
+            console.error('Resizing method call', e)
+        }
+    }
+
+    checkSender = (e) => {
+        e.preventDefault()
+        // error added or removed in iframe
+        if (e.data.msg === 'validationChanged') {
+            this.setIframeHeight()
+        }
+    }
+
     render() {
-        return <h1>Hello, {this.props.name}</h1>;
+        return <div className="App">
+            <iframe
+                id="todo-iframe"
+                title="todo-lol"
+                src="https://artemmarkevych1.github.io/iframe-resizer-child-web/"
+                frameBorder="0"/>
+        </div>
     }
 }
 
