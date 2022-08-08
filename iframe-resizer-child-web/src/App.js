@@ -4,9 +4,9 @@ import useScript from './hooks';
 
 function App() {
     const URL = "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.1.1/iframeResizer.contentWindow.min.js"
-    // const key = "sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    const key = "sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 
-    useScript(URL)
+    useScript(URL, key)
 
     return (
         <div className="App" >
