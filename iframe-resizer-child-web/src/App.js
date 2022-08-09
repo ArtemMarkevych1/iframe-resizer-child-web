@@ -1,19 +1,21 @@
 import React from 'react'
 import './App.css';
-// import useScript from './hooks';
-import { Helmet } from "react-helmet"
+import useScript from './hooks';
+// import { Helmet } from "react-helmet"
 
 function App() {
     const URL = "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.1.1/iframeResizer.contentWindow.min.js"
-    const key = "sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    // const key = "sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 
-    // useScript(URL, key)
+    useScript(URL,
+        // key
+    )
 
     return (
         <>
-            <Helmet>
-                <script src={URL} integrity={key} crossorigin="anonymous" async/>
-            </Helmet>
+            {/*<Helmet>*/}
+            {/*    <script src={URL} integrity={key} crossorigin="anonymous" async/>*/}
+            {/*</Helmet>*/}
             <div className="App" >
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias aperiam debitis deleniti
                 distinctio, dolorem eius impedit in ipsam ipsum magnam nam pariatur praesentium qui quisquam similique
@@ -138,65 +140,3 @@ function App() {
 }
 
 export default App;
-
-
-// class App extends React.Component {
-//
-//     // region react lifecycle methods
-//     componentWillMount() {
-//         // Detect whether device supports orientationchange event, otherwise fall back to the resize event
-//         let supportsOrientationChange = 'onorientationchange' in window
-//         let orientationEvent = supportsOrientationChange ? 'orientationchange' : 'resize'
-//         if (window.addEventListener) {
-//             window.addEventListener('message', this.checkSender)
-//             window.addEventListener(orientationEvent, this.setIframeHeight)
-//         } else if (window.attachEvent) {
-//             window.attachEvent('message', this.checkSender)
-//             window.attachEvent(orientationEvent, this.setIframeHeight)
-//         }
-//     }
-//
-//     componentWillUnmount() {
-//         window.removeEventListener('message', this.checkSender)
-//         let supportsOrientationChange = 'onorientationchange' in window
-//         let orientationEvent = supportsOrientationChange ? 'orientationchange' : 'resize'
-//         window.removeEventListener(orientationEvent, this.setIframeHeight)
-//     }
-//
-//     // endregion
-//
-//     // region custom methods.
-//     setIframeHeight = () => {
-//         try {
-//             let iframe = document.getElementById("#todo-iframe")
-//             if (iframe) {
-//                 let iframeWin = iframe.contentDocument || iframe.contentWindow
-//                 if (iframeWin && iframeWin.getElementById('root')) {
-//                     iframe.style.height = iframeWin.getElementById('root').offsetHeight + 'px'
-//                 }
-//             }
-//         } catch (e) {
-//             console.error('Resizing method call', e)
-//         }
-//     }
-//
-//     checkSender = (e) => {
-//         e.preventDefault()
-//         // error added or removed in iframe
-//         if (e.data.msg === 'validationChanged') {
-//             this.setIframeHeight()
-//         }
-//     }
-//
-//     render() {
-//         return <div className="App">
-//             <iframe
-//                 id="todo-iframe"
-//                 title="todo-lol"
-//                 src="https://artemmarkevych1.github.io/iframe-resizer-child-web/"
-//                 frameBorder="0"/>
-//         </div>
-//     }
-// }
-//
-// export default App
